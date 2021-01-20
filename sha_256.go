@@ -174,26 +174,12 @@ type params struct {
 // ==================================================================
 // ==================================================================
 // ==================================================================
-// func main () {
-// 	p := fmt.Println;
-// 	p ("started");
-// //	var _testString string = "Note 2: For each round, there is one round constant k[i] and one entry in the message schedule array w[i], 0 ≤ i ≤ 63";
-// 	var _testString string = "abc";
-// //	fmt.Printf ("testString = %s\nand the length is = %d\n", _testString, len(_testString));
-// 	process ([]byte (_testString));
-
-// }
-
-
-
 func Sha_256 (input []byte) string {
 	var _p *params = initialise (input);
-//	 h = []uint32 {0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19};
 	_err := padMessageForSHA256 (_p);
 	if (_err == nil) {_err = breakIntoBlocks (_p);}
 	if (_err == nil) {_err = createScheduleArray(_p);}
 	compression (_p);
-//	fmt.Printf ("the final hash    %x\n", _finalHash);
 
 	return _p.sOutput;
 }
